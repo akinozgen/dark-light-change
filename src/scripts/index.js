@@ -1,5 +1,6 @@
 import '../styles/index.scss';
 import '../styles/toggle.scss';
+import '../styles/notice.scss';
 import img from '/src/bg.png';
 
 if (process.env.NODE_ENV === 'development') {
@@ -17,4 +18,9 @@ document.getElementById('mode-switch').addEventListener('change', function() {
 
   document.body.classList.remove('light');
   return document.body.classList.add('dark');
+});
+
+document.getElementById('dismiss').addEventListener('click', function() {
+  var notice = document.getElementById('cookie-notice');
+  if (notice) notice.parentNode.removeChild(notice);
 });
