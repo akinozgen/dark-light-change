@@ -1,11 +1,12 @@
 import '../styles/index.scss';
 import '../styles/toggle.scss';
+import img from '/src/bg.png';
 
 if (process.env.NODE_ENV === 'development') {
   require('../index.html');
 }
 
-document.getElementById('img').attributes['src'].value = './bg.png';
+document.getElementById('img').attributes['src'].value = img;
 
 
 document.getElementById('mode-switch').addEventListener('change', function() {
