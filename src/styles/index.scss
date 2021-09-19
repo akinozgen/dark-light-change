@@ -43,6 +43,7 @@ body {
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
+  transition: all 0.3s ease;
   box-shadow:
     2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
     6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
@@ -53,6 +54,10 @@ body {
 
   img {
     margin: 0 auto;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -100,6 +105,18 @@ body {
 
     &:visited {
       color: white;
+    }
+  }
+}
+
+.light {
+  .credits {
+    a {
+      color: $btn-color;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 }
