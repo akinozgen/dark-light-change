@@ -12,6 +12,7 @@ body {
   justify-content: center;
   flex-direction: column;
   background-color: $dark-bg;
+  margin: 0;
 
   &.dark {
     background-color: $dark-bg;
@@ -20,6 +21,18 @@ body {
   &.light {
     background-color: $light-bg;
   }
+}
+
+.stars {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  background-size: 30%;
+  background-repeat: repeat;
+  background-position: 0 0;
+  transition: all 0.5s linear;
+  filter: grayscale(100%);
 }
 
 .check {
