@@ -13,4 +13,4 @@ To run development:
 
 To build:
 
-`npm build`
+`npm run build`
