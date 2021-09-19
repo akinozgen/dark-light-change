@@ -1,0 +1,29 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .img {
+    width: 80vw;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .cookie-notice {
+    width: 100vw;
+    left: 0;
+    margin: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    bottom: 0;
+    padding: 20px;
+
+    p {
+      width: 70%;
+    }
+
+    button {
+      width: 20%;
+      right: 1em;
+    }
+  }
+}

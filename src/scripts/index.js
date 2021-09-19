@@ -1,6 +1,7 @@
 import '../styles/index.scss';
 import '../styles/toggle.scss';
 import '../styles/notice.scss';
+import '../styles/responsive.scss';
 import img from '/src/bg.png';
 
 if (process.env.NODE_ENV === 'development') {
@@ -8,7 +9,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 document.getElementById('img').attributes['src'].value = img;
-
 
 document.getElementById('mode-switch').addEventListener('change', function() {
   if (document.body.classList.contains('dark')) {
@@ -21,6 +21,6 @@ document.getElementById('mode-switch').addEventListener('change', function() {
 });
 
 document.getElementById('dismiss').addEventListener('click', function() {
-  var notice = document.getElementById('cookie-notice');
+  let notice = document.getElementById('cookie-notice');
   if (notice) notice.parentNode.removeChild(notice);
 });

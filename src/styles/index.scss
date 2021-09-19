@@ -1,6 +1,7 @@
 $body-color: slateblue;
 $dark-bg: rgb(8, 8, 8);
 $light-bg: rgb(250, 250, 250);
+$btn-color: #9393e0;
 
 body {
   color: $body-color;
@@ -39,5 +40,53 @@ body.light {
 
   img {
     margin: 0 auto;
+  }
+}
+
+.credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 4em;
+
+  a {
+    margin: 8px;
+    padding: 12px 24px;
+    border: 3px solid $btn-color;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: inline-block;
+    }
+
+    small {
+      overflow: hidden;
+      width: 0;
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
+      margin-left: 0.5em;
+      margin-top: 0.1em;
+    }
+
+    &:hover {
+      background-color: $btn-color;
+
+      small {
+        width: 8em;
+      }
+    }
+
+    &:visited {
+      color: white;
+    }
   }
 }
