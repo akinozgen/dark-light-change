@@ -1,0 +1,137 @@
+/* stylelint-disable */
+$p: 16px;
+$e: cubic-bezier(.64,0,.25,1);
+$yellow: #FFE175;
+
+*, *:before, *:after { box-sizing: border-box; }
+::selection { background: none; }
+body, html { height: 100%; }
+html{
+  font-size: $p;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+  align-items: center;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+  background: #2B2B2D;
+  color: #C5C5C7;
+  transition: all 0.5s $e;
+}
+
+.switch{
+  width: 3.5rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  background: fade-out(white,0.85);
+  transition: all 0.3s $e;
+  transform-style: preserve-3d;
+  .light-ui &{
+    background: fade-out(black,0.85);
+  }
+  border: 0;
+  margin: 1rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  >input{
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    display: block;
+    width: 100%;
+    height: 200%;
+    margin: 0;
+    z-index:1;
+    transform: translateY(-25%);
+    appearance: none;
+    background: red;
+    transform-style: preserve-3d;
+    opacity: 0;
+    cursor: pointer;
+    &:checked + label{
+      transform: translateX(75%);
+      color: $yellow;
+      &:before{
+        opacity: 0.5;
+        background: 50% 50%/100% 100% radial-gradient($yellow,transparent 55%, transparent);
+        transform: translate(-50%,-50%) rotate(60deg);
+      }
+      &:after{
+        transition: background 0.5s $e, box-shadow 1s $e;
+        background: 
+          205% 15%/40% 40% radial-gradient(fade-out(black,0.9),fade-out(black,0.85) 50%, transparent 55%, transparent 100%) no-repeat,
+          280% 45%/20% 20% radial-gradient(fade-out(black,0.9),fade-out(black,0.85) 50%, transparent 55%, transparent 100%) no-repeat,
+          310% 190%/70% 70% radial-gradient(fade-out(black,0.9),fade-out(black,0.85) 50%, transparent 55%, transparent 100%) no-repeat;
+        background-color: white;
+        box-shadow: inset 0 0 1rem 0.5rem $yellow, 0 0 2rem $yellow;
+      }
+    }
+    &:hover:checked + label:before{
+       animation: sun 10s linear infinite;
+    }
+    + label{
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      color: fade-out(white,0.75);
+      transition: all 0.3s $e;
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        height: 200%;
+        width: 200%;
+        left: 50%;
+        top: 50%; 
+        transform-style: preserve-3d;
+        transform: translate(-50%,-50%) rotate(0deg);
+        opacity: 0;
+        transition: all 0.3s $e;
+        background: 50% 50%/50% 50% radial-gradient($yellow,transparent 55%, transparent);
+	      mask-image: repeating-conic-gradient(transparent 0 32deg, black 0 36deg);
+      }
+      &:after{
+        content:'';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform-style: preserve-3d;
+        border-radius: 100%;
+        transition: background 0.5s $e, box-shadow 0.3s $e;
+        background: 
+          5% 15%/40% 40% radial-gradient(fade-out(black,0.9),fade-out(black,0.85) 50%, transparent 55%, transparent 100%) no-repeat,
+          80% 45%/20% 20% radial-gradient(fade-out(black,0.9),fade-out(black,0.85) 50%, transparent 55%, transparent 100%) no-repeat,
+          110% 190%/70% 70% radial-gradient(fade-out(black,0.9),fade-out(black,0.85) 50%, transparent 55%, transparent 100%) no-repeat;
+        background-color: white;
+        box-shadow: inset 0 0 2rem fade-out(black,0.25), 0 0 0.5rem fade-out(white,0.75);
+      }
+    }
+  }
+}
+
+@keyframes sun {
+  from{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  to{
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+}
+
+///
+.light-ui body{
+  background: #fff;
+}
